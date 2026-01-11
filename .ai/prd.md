@@ -174,3 +174,4 @@ Kryteria akceptacji:
 
 - **Adopcja AI (Creation Rate):** Minimum 75% wszystkich fiszek w systemie zostało utworzonych przy użyciu generatora AI (a nie ręcznie).
 - **Jakość AI (Acceptance Rate):** Minimum 75% fiszek zaproponowanych przez AI w trybie draftu jest akceptowanych przez użytkownika (bez odrzucenia).
+
