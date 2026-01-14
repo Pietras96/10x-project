@@ -1,94 +1,107 @@
-# 10x Astro Starter
+# 10x-Cards
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+> An AI-powered English learning application utilizing the SuperMemo-2 algorithm for effective spaced repetition.
 
-## Tech Stack
+## 2. Project Description
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+**10x-Cards** is a Minimum Viable Product (MVP) web application designed to streamline the process of creating language learning materials. By leveraging LLM, the system automatically generates personalized flashcards from any English text provided by the user.
 
-## Prerequisites
+Key features include:
+- **AI-Powered Generation**: Extracts vocabulary, definitions, and context from texts (1,000 - 10,000 characters).
+- **Smart Learning**: Implements the SuperMemo-2 (SM-2) algorithm to optimize review intervals.
+- **Review System**: A dedicated "Draft" mode to verify, edit, or reject AI-suggested cards.
+- **Progress Tracking**: User dashboard with streaks and learning statistics.
+- **Focus**: Dedicated to Polish speakers learning English.
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+## 3. Tech Stack
 
-## Getting Started
+### Frontend
+- **Framework**: [Astro 5](https://astro.build/) - High-performance static and server-rendered architecture.
+- **UI Library**: [React 19](https://react.dev/) - For interactive components.
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [Shadcn/ui](https://ui.shadcn.com/).
+- **Language**: [TypeScript 5](https://www.typescriptlang.org/).
 
-1. Clone the repository:
+### Backend & Services
+- **Backend-as-a-Service**: [Supabase](https://supabase.com/) (PostgreSQL, Authentication).
+- **AI Integration**: [Openrouter.ai](https://openrouter.ai/) (Access to OpenAI, Anthropic, etc.).
 
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
+### DevOps
+- **CI/CD**: GitHub Actions.
+- **Hosting**: DigitalOcean (Dockerized).
 
-2. Install dependencies:
+## 4. Getting Started Locally
 
-```bash
-npm install
-```
+Follow these instructions to get the project up and running on your local machine.
 
-3. Run the development server:
+### Prerequisites
+- **Node.js**: Version `22.14.0` (as specified in `.nvmrc`).
+- **Package Manager**: npm, pnpm, or yarn.
 
-```bash
-npm run dev
-```
+### Installation
 
-4. Build for production:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Pietras96/10x-project.git
+   cd 10x-cards
+   ```
 
-```bash
-npm run build
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Available Scripts
+3. **Environment Setup**
+   Create a `.env` file in the root directory. You will need to configure the following services:
+   - **Supabase**: URL and Anon Key.
+   - **Openrouter**: API Key for AI generation.
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+   Example `.env` structure:
+   ```env
+   PUBLIC_SUPABASE_URL=your_supabase_url
+   PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   OPENROUTER_API_KEY=your_openrouter_key
+   ```
 
-## Project Structure
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:4321`.
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+## 5. Available Scripts
 
-## AI Development Support
+In the project directory, you can run:
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+| Script | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the local development server with hot reloading. |
+| `npm run build` | Builds the production-ready site to the `dist/` directory. |
+| `npm run preview` | Previews the production build locally. |
+| `npm run lint` | Runs ESLint to check for code quality issues. |
+| `npm run lint:fix` | Automatically fixes fixable linting errors. |
+| `npm run format` | Formats code using Prettier. |
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
+## 6. Project Scope
 
-### Cursor IDE
+### In Scope
+- Web application accessible via browser (Responsive Web Design).
+- Language pair: English -> Polish.
+- Input method: Text pasting for AI analysis.
+- Algorithms: SuperMemo-2 (SM-2) for spaced repetition.
+- Authentication: Email/Password via Supabase.
 
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
+### Out of Scope
+- Native mobile applications (iOS/Android).
+- File imports (PDF, DOCX, etc.).
+- Public flashcard sets or sharing features.
+- Support for languages other than English.
 
-### GitHub Copilot
+## 7. Project Status
 
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
+🚧 **Status**: MVP / Active Development
 
-### Windsurf
+The project is currently in the MVP phase, focusing on core functionalities like user authentication, AI flashcard generation, and the basic learning loop.
 
-The `.windsurfrules` file contains AI configuration for Windsurf.
+## 8. License
 
-## Contributing
-
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
-
-## License
-
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
